@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   },
 };
 
+// Prevent any static generation - all pages should be dynamic
+export const dynamic = 'force-dynamic';
+
 export default function RootLayout({
   children,
   session,

@@ -3,6 +3,9 @@ import { Navbar } from "@/app/components/layout/Navbar";
 import { Footer } from "@/app/components/layout/Footer";
 import { VisitorTracker } from "@/app/components/VisitorTracker";
 
+// Ensure public pages are dynamic too
+export const dynamic = 'force-dynamic';
+
 export default function PublicLayout({
   children,
 }: {
