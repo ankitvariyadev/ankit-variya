@@ -6,10 +6,11 @@ import { Projects } from "@/app/components/sections/Projects";
 import { Experience } from "@/app/components/sections/Experience";
 import { Contact } from "@/app/components/sections/Contact";
 
-export const dynamic = "force-static";
+// This page will be rendered on-demand (dynamic) to avoid build-time DB connection
+export const dynamic = "force-dynamic";
 
 export default async function HomePage() {
-  // Fetch data from database
+  // Fetch data from database at request time (not build time)
   const [skills, projects, experiences] = await Promise.all([
     prisma.skill.findMany({
       orderBy: { proficiency: "desc" },
