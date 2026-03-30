@@ -2,6 +2,8 @@ import { prisma } from "@/lib/prisma";
 import { StatsCard } from "@/app/components/admin/StatsCard";
 import { RecentActivity } from "@/app/components/admin/RecentActivity";
 
+export const dynamic = 'force-dynamic';
+
 export default async function AdminDashboardPage() {
   const [
     skillsCount,
