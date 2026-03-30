@@ -1,9 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { Navbar } from "@/app/components/layout/Navbar";
-import { Footer } from "@/app/components/layout/Footer";
-import { VisitorTracker } from "@/app/components/VisitorTracker";
 import { Providers } from "@/app/components/Providers";
 
 const inter = Inter({
@@ -33,15 +30,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning className={`${inter.variable}`}>
-      <body className="min-h-full flex flex-col bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-black transition-colors duration-300">
+      <body className="min-h-full">
         <Providers session={session}>
-          <VisitorTracker />
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
+          {children}
         </Providers>
       </body>
     </html>
   );
 }
-
