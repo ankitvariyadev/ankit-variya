@@ -8,6 +8,7 @@ import { Contact } from "@/app/components/sections/Contact";
 
 // This page will be rendered on-demand (dynamic) to avoid build-time DB connection
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export default async function HomePage() {
   // Fetch data from database at request time (not build time)
