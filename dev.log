@@ -1,0 +1,13 @@
+
+> ankit-variya-portfolio@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.1 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://10.129.225.111:3000
+- Environments: .env.local, .env
+✓ Ready in 144ms
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead. Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+
+ GET /admin/login 307 in 270ms (next.js: 72ms, proxy.ts: 38ms, application-code: 160ms)
+[?25h
