@@ -3,6 +3,9 @@ import { redirect } from "next/navigation";
 import { authOptions } from "@/lib/auth";
 import { AdminSidebar } from "@/app/components/admin/Sidebar";
 
+// Prevent static generation - requires session check at runtime
+export const dynamic = 'force-dynamic';
+
 export default async function AdminLayout({
   children,
 }: {
