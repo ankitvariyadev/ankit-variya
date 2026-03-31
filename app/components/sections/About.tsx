@@ -45,9 +45,9 @@ export function About({ initialSkills }: AboutProps) {
   };
 
   const stats = [
-    { label: "Years Experience", value: "6+" },
-    { label: "Projects Completed", value: "50+" },
-    { label: "Happy Clients", value: "40+" },
+    { label: "Years Experience", value: "2.4+" },
+    { label: "Projects Completed", value: "6+" },
+    { label: "Happy Clients", value: "6+" },
     { label: "Technologies", value: skills.length.toString() },
   ];
 
@@ -75,7 +75,7 @@ export function About({ initialSkills }: AboutProps) {
             {/* About Text */}
             <motion.div variants={itemVariants} className="space-y-6">
               <p className="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
-                I&apos;m a passionate Laravel developer with over 6 years of experience
+                I&apos;m a passionate Laravel developer with 2.4+ years of experience
                 crafting elegant web applications. My journey in web development began
                 with a curiosity for how things work on the internet, which evolved
                 into a deep expertise in the Laravel ecosystem and modern JavaScript frameworks.

@@ -118,7 +118,7 @@ export default function AdminLoginPage() {
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
                 <div className="w-full h-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white text-3xl font-bold">
-                  AK
+                  AV
                 </div>
               </motion.div>
               <h1 className="text-3xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 dark:from-white dark:via-blue-100 dark:to-purple-100 bg-clip-text text-transparent mb-2">
