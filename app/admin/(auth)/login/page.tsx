@@ -49,7 +49,7 @@ export default function AdminLoginPage() {
           {/* Logo/Title */}
           <div className="text-center mb-8">
             <div className="w-16 h-16 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-white text-2xl font-bold mx-auto mb-4 shadow-lg">
-              AV
+              Ankit Variya
             </div>
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
               Admin Portal
