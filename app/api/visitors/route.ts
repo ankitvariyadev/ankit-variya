@@ -24,10 +24,30 @@ export async function POST(request: NextRequest) {
     // Determine page path
     const path = pagePath || request.nextUrl.pathname;
 
+    // Fetch location from IP using ip-api.com (free, no API key required)
+    let locationData = location || "Unknown";
+    if (visitorIp && visitorIp !== "unknown" && visitorIp !== '::1' && !visitorIp.startsWith('192.168.') && !visitorIp.startsWith('10.')) {
+      try {
+        const geoResponse = await fetch(`http://ip-api.com/json/${visitorIp}?fields=status,message,country,regionName,city,isp`, {
+          next: { revalidate: 3600 } // Cache for 1 hour
+        });
+
+        if (geoResponse.ok) {
+          const geoData = await geoResponse.json();
+          if (geoData.status === 'success') {
+            locationData = `${geoData.city || ''}, ${geoData.regionName || ''}, ${geoData.country || ''}`.replace(/^,\s*|\s*,\s*$/g, '');
+          }
+        }
+      } catch (geoError) {
+        console.debug("Geolocation fetch failed:", geoError);
+        // Continue without geolocation - don't fail the request
+      }
+    }
+
     const visitor = await prisma.visitor.create({
       data: {
         ipAddress: visitorIp,
-        location: location || "Unknown",
+        location: locationData,
         device: userAgentInfo.device,
         browser: userAgentInfo.browser,
         pagePath: path,
