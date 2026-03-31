@@ -4,7 +4,6 @@ import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
-import { SessionStatus } from "@/components/ui/SessionStatus";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -53,7 +52,6 @@ export function Navbar() {
               </Link>
             ))}
             <ThemeToggle />
-            <SessionStatus />
           </div>
 
           {/* Mobile menu button */}
@@ -92,7 +90,6 @@ export function Navbar() {
                   {link.label}
                 </Link>
               ))}
-              <SessionStatus />
             </div>
           </div>
         )}
