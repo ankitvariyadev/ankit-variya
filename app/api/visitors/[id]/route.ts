@@ -7,10 +7,18 @@ export async function DELETE(
 ) {
   try {
     const { id } = await params;
+    const numericId = parseInt(id, 10);
+
+    if (isNaN(numericId)) {
+      return NextResponse.json(
+        { message: "Invalid visitor ID" },
+        { status: 400 }
+      );
+    }
 
     // Check if visitor exists
     const existingVisitor = await prisma.visitor.findUnique({
-      where: { id },
+      where: { id: numericId },
     });
 
     if (!existingVisitor) {
@@ -22,7 +30,7 @@ export async function DELETE(
 
     // Delete the visitor
     await prisma.visitor.delete({
-      where: { id },
+      where: { id: numericId },
     });
 
     return NextResponse.json(

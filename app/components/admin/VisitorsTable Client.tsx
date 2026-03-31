@@ -5,7 +5,7 @@ import { format } from "date-fns";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Visitor {
-  id: string;
+  id: number;
   ipAddress: string;
   location: string;
   device: string;
@@ -30,13 +30,13 @@ export function VisitorsTableClient({
   const [isDeleting, setIsDeleting] = useState(false);
   const [message, setMessage] = useState<{ type: 'success' | 'error'; text: string } | null>(null);
 
-  const handleDelete = async (id: string) => {
+  const handleDelete = async (id: number) => {
     if (!confirm("Are you sure you want to delete this visitor record? This action cannot be undone.")) {
       return;
     }
 
     setIsDeleting(true);
-    setDeleteId(id);
+    setDeleteId(id.toString());
 
     try {
       const response = await fetch(`/api/visitors/${id}`, {
@@ -167,10 +167,10 @@ export function VisitorsTableClient({
                     <td className="px-6 py-4 whitespace-nowrap text-sm">
                       <button
                         onClick={() => handleDelete(visitor.id)}
-                        disabled={isDeleting && deleteId === visitor.id}
+                        disabled={isDeleting && deleteId === visitor.id.toString()}
                         className="inline-flex items-center gap-1 px-3 py-1.5 rounded-lg text-sm font-medium text-red-600 dark:text-red-400 hover:bg-red-50 dark:hover:bg-red-900/20 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
                       >
-                        {isDeleting && deleteId === visitor.id ? (
+                        {isDeleting && deleteId === visitor.id.toString() ? (
                           <>
                             <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
                               <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
