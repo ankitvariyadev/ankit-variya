@@ -102,7 +102,7 @@ export function AdminSidebar() {
           <div className="p-6 border-b border-white/10 dark:border-white/5">
             <Link href="/admin" className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-full bg-gradient-to-r from-blue-600 to-purple-600 flex items-center justify-center text-white font-bold shadow-lg">
-                AV
+                Ankit Variya
               </div>
               <div>
                 <h2 className="font-bold text-gray-900 dark:text-white">Admin Panel</h2>
