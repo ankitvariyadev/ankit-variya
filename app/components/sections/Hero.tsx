@@ -204,8 +204,8 @@ export function Hero() {
                 </span>
               </a>
               <a
-                href="/resume.pdf"
-                download
+                href="/resume/Ankit%20Resume1.pdf"
+                download="Ankit-Variya-Resume.pdf"
                 className="group w-full sm:w-auto px-8 py-4 rounded-full glass text-gray-700 dark:text-gray-200 font-semibold border border-gray-300 dark:border-gray-600 hover:bg-white/50 dark:hover:bg-white/10 hover:scale-105 transition-all duration-300"
               >
                 <span className="flex items-center justify-center gap-2">
